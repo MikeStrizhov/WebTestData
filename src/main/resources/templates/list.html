@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of tests</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th> Name </th>
+        <th> Start time </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${testList.empty}">
+        <td colspan="2"> Tests not found </td>
+    </tr>
+    <tr th:each="test : ${testList}">
+        <td><a th:href="@{showTestInfo(testId=${test.getId()})}"><span th:text="${test.getName()}"> Name </span></a></td>
+        <td><span th:text="${#dates.format(test.getStartTime(), 'dd-MM-yyyy HH:mm:ss')}"> Start time </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

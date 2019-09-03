@@ -1,0 +1,1 @@
+INSERT INTO test_run (id, name, start_time) VALUES (1, 't1', CURRENT_TIMESTAMP);

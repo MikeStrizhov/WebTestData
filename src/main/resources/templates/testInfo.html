@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test information</title>
+</head>
+<body>
+
+<span th:text="${testInfo.getName()}"> Name </span>
+<span th:text="${#dates.format(testInfo.getStartTime(), 'dd-MM-yyyy HH:mm:ss')}"> Start time </span>
+Test Id:
+<span th:text="${testInfo.getId()}"> Id </span>
+</body>
+</html>
